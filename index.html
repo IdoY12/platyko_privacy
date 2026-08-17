@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy Policy for Platyko, the JavaScript learning app for iOS. No analytics, no ads, no tracking — read exactly what data the app collects and how it is protected.">
+  <meta name="color-scheme" content="light dark">
+  <title>Privacy Policy — Platyko</title>
+<style>
+  :root {
+    --bg: #FBFAF6;
+    --surface: #F3F1E7;
+    --surface-2: #EDEADD;
+    --ink: #22211C;
+    --muted: #6B675C;
+    --rule: #E3E0D2;
+    --accent: #8A6A00;
+    --accent-strong: #6E5500;
+    --accent-wash: #F6EFD3;
+    --code-bg: #EFECDF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #191813;
+      --surface: #211F18;
+      --surface-2: #282519;
+      --ink: #EBE8DC;
+      --muted: #A39E8E;
+      --rule: #343124;
+      --accent: #F2D24B;
+      --accent-strong: #F8DE74;
+      --accent-wash: #2A2717;
+      --code-bg: #262316;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #191813;
+    --surface: #211F18;
+    --surface-2: #282519;
+    --ink: #EBE8DC;
+    --muted: #A39E8E;
+    --rule: #343124;
+    --accent: #F2D24B;
+    --accent-strong: #F8DE74;
+    --accent-wash: #2A2717;
+    --code-bg: #262316;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  .page {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+  }
+
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: var(--accent-strong); }
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 2.5rem;
+  }
+  .wordmark {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin: 0 0 1.75rem;
+  }
+  .wordmark .brace { color: var(--accent); font-weight: 700; }
+  .site-header h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    text-wrap: balance;
+  }
+  .doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.8125rem;
+    color: var(--muted);
+    margin: 0 0 1rem;
+  }
+  .doc-meta strong { color: var(--ink); font-weight: 600; }
+  .lede {
+    color: var(--muted);
+    font-size: 1.0625rem;
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  /* ---------- At a glance ---------- */
+  .glance {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin: 0 0 2.5rem;
+  }
+  @media (max-width: 540px) {
+    .glance { grid-template-columns: 1fr; }
+  }
+  .glance-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+  }
+  .glance-card h3 {
+    margin: 0 0 0.3rem;
+    font-size: 0.9375rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+  .glance-card p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ---------- Table of contents ---------- */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.5rem 1.5rem 1.25rem;
+    margin: 0 0 3rem;
+  }
+  .toc h2 {
+    margin: 0 0 1rem;
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  @media (max-width: 540px) {
+    .toc ol { columns: 1; }
+  }
+  .toc li {
+    break-inside: avoid;
+    padding: 0.28rem 0;
+    font-size: 0.9375rem;
+  }
+  .toc .num {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    margin-right: 0.55rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .toc a { color: var(--ink); text-decoration: none; }
+  .toc a:hover { color: var(--accent); text-decoration: underline; }
+
+  /* ---------- Sections ---------- */
+  section { margin: 0 0 3rem; scroll-margin-top: 1.5rem; }
+  section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    margin: 0 0 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    text-wrap: balance;
+  }
+  section h2 .num {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+  section h3 {
+    font-size: 1.0625rem;
+    font-weight: 650;
+    margin: 1.75rem 0 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  section p, section ul, section ol { margin: 0 0 1rem; max-width: 68ch; }
+  section ul, section ol { padding-left: 1.4rem; }
+  section li { margin-bottom: 0.45rem; }
+  section li::marker { color: var(--accent); }
+
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 0.9rem 1.1rem;
+    margin: 0 0 1rem;
+    font-size: 0.9375rem;
+  }
+  .callout p { margin: 0; }
+  .callout p + p { margin-top: 0.6rem; }
+
+  code {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.85em;
+    background: var(--code-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+  }
+
+  /* ---------- Tables ---------- */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 560px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  tr:last-child td { border-bottom: none; }
+  th {
+    background: var(--surface);
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.71rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  td strong { font-weight: 650; }
+
+  /* ---------- Footer ---------- */
+  .site-footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    justify-content: space-between;
+  }
+  .site-footer p { margin: 0; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="site-header">
+    <p class="wordmark"><span class="brace">{</span> platyko <span class="brace">}</span></p>
+    <h1>Privacy Policy</h1>
+    <p class="doc-meta">
+      <span>Effective date: <strong>August 17, 2026</strong></span>
+      <span>Last updated: <strong>August 17, 2026</strong></span>
+    </p>
+    <p class="lede">
+      Platyko is a JavaScript learning app for iOS, built and operated by Ido Yahav, an
+      individual developer based in Israel. This policy explains what information the app
+      collects, why, and the choices and rights you have. It is written to be read, not skimmed
+      past &mdash; but if you only have a minute, start with the summary below.
+    </p>
+  </header>
+
+  <div class="glance" aria-label="Privacy at a glance">
+    <div class="glance-card">
+      <h3>No tracking, no ads</h3>
+      <p>No analytics, crash reporting, advertising, or tracking SDKs of any kind &mdash; in the app or on this website.</p>
+    </div>
+    <div class="glance-card">
+      <h3>Your data is never sold</h3>
+      <p>We do not sell personal data or share it with third parties for marketing. Ever.</p>
+    </div>
+    <div class="glance-card">
+      <h3>Guest Mode is fully on-device</h3>
+      <p>Use Platyko without an account &mdash; your progress stays only on your device, and nothing about you is stored on our servers.</p>
+    </div>
+    <div class="glance-card">
+      <h3>Delete your account any time</h3>
+      <p>Account deletion is built into the app&rsquo;s Settings. It is immediate and permanent, with backup copies purged within 30 days.</p>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><span class="num">01</span><a href="#who-we-are">Who We Are</a></li>
+      <li><span class="num">02</span><a href="#information-we-collect">Information We Collect</a></li>
+      <li><span class="num">03</span><a href="#what-we-dont-collect">What We Don&rsquo;t Collect</a></li>
+      <li><span class="num">04</span><a href="#guest-mode">Guest Mode</a></li>
+      <li><span class="num">05</span><a href="#childrens-privacy">Children&rsquo;s Privacy</a></li>
+      <li><span class="num">06</span><a href="#how-we-use-information">How We Use Information</a></li>
+      <li><span class="num">07</span><a href="#legal-bases">Legal Bases (GDPR)</a></li>
+      <li><span class="num">08</span><a href="#third-party-processors">Third-Party Service Providers</a></li>
+      <li><span class="num">09</span><a href="#international-transfers">International Data Transfers</a></li>
+      <li><span class="num">10</span><a href="#retention-and-deletion">Data Retention &amp; Deletion</a></li>
+      <li><span class="num">11</span><a href="#security">Security</a></li>
+      <li><span class="num">12</span><a href="#your-rights">Your Rights</a></li>
+      <li><span class="num">13</span><a href="#push-notifications">Push Notifications</a></li>
+      <li><span class="num">14</span><a href="#emails">Emails We Send</a></li>
+      <li><span class="num">15</span><a href="#this-website">This Website</a></li>
+      <li><span class="num">16</span><a href="#changes">Changes to This Policy</a></li>
+      <li><span class="num">17</span><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="who-we-are">
+    <h2><span class="num">01</span>Who We Are</h2>
+    <p>
+      Platyko (&ldquo;the app&rdquo;) is developed and operated by <strong>Ido Yahav</strong>, an individual
+      developer based in Israel, acting as the data controller for any personal data processed
+      through the app and this website.
+    </p>
+    <ul>
+      <li><strong>Operator:</strong> Ido Yahav (individual developer, no registered company), Israel</li>
+      <li><strong>Contact:</strong> <a href="mailto:platyko.js@gmail.com">platyko.js@gmail.com</a></li>
+      <li><strong>Website:</strong> platyko.com</li>
+    </ul>
+    <p>
+      This policy applies to the Platyko iOS app and to this website. By using the app, you
+      agree to the practices described here.
+    </p>
+  </section>
+
+  <section id="information-we-collect">
+    <h2><span class="num">02</span>Information We Collect</h2>
+    <p class="callout">
+      We collect personal data <strong>only from registered users</strong>. If you use Platyko in
+      Guest Mode, we collect nothing about you &mdash; see <a href="#guest-mode">Section 04</a>.
+    </p>
+
+    <h3>Account information</h3>
+    <ul>
+      <li>
+        <strong>Email address and password</strong> &mdash; if you register with email, we store your
+        email address and a hashed version of your password (using the bcrypt algorithm). We never
+        store or have access to your plain-text password.
+      </li>
+      <li>
+        <strong>Google Sign-In / Sign in with Apple</strong> &mdash; if you sign in with Google or
+        Apple, we receive your email address and basic profile information via a secure identity
+        token (<code>id_token</code>). We never receive or store a password for these accounts.
+        With Sign in with Apple, you may choose to hide your email address, in which case we
+        receive only Apple&rsquo;s private relay address.
+      </li>
+      <li>
+        <strong>Profile avatar</strong> &mdash; if you choose to upload a profile picture, it is
+        stored on Amazon Web Services (AWS S3).
+      </li>
+    </ul>
+
+    <h3>Learning data</h3>
+    <ul>
+      <li>Lesson and course progress</li>
+      <li>Daily streaks</li>
+      <li>Duel (head-to-head challenge) history and results</li>
+      <li>Puzzle results and scores</li>
+    </ul>
+
+    <h3>Technical data</h3>
+    <ul>
+      <li>
+        <strong>Push notification tokens</strong> &mdash; if you enable push notifications, we store
+        a device push token (Expo push token / Apple Push Notification service token) so we can
+        deliver notifications to your device.
+      </li>
+      <li>
+        <strong>Verification and reset codes</strong> &mdash; when you verify your email or reset
+        your password, we generate a one-time code (OTP). Codes are stored in hashed form only and
+        are automatically deleted after 10 minutes.
+      </li>
+    </ul>
+  </section>
+
+  <section id="what-we-dont-collect">
+    <h2><span class="num">03</span>What We Don&rsquo;t Collect</h2>
+    <p>Platyko is deliberately built without the data collection common in mobile apps. The app contains:</p>
+    <ul>
+      <li><strong>No analytics SDKs</strong> &mdash; we do not measure or profile how you use the app</li>
+      <li><strong>No crash-reporting SDKs</strong></li>
+      <li><strong>No advertising or ad networks</strong></li>
+      <li><strong>No tracking of any kind</strong> &mdash; no device fingerprinting, no cross-app identifiers, no location collection</li>
+    </ul>
+    <p>
+      We do not sell personal data, and we do not share personal data with third parties for
+      marketing or advertising purposes.
+    </p>
+  </section>
+
+  <section id="guest-mode">
+    <h2><span class="num">04</span>Guest Mode</h2>
+    <p>
+      You can use Platyko without creating an account. In Guest Mode:
+    </p>
+    <ul>
+      <li>
+        Your learning progress is stored <strong>only locally on your device</strong> (in the
+        app&rsquo;s local storage). It never leaves your device.
+      </li>
+      <li>
+        The app makes anonymous, unauthenticated requests to our servers to fetch learning content
+        (lessons, puzzles). These requests carry no account, profile, or identifier &mdash; nothing
+        is stored on our servers or associated with you.
+      </li>
+      <li>
+        If you later create an account, your locally stored guest progress is uploaded to our
+        servers and linked to your new account so you can continue where you left off. Until that
+        moment, it remains exclusively on your device.
+      </li>
+      <li>
+        If you delete the app without creating an account, your guest progress is deleted with it.
+      </li>
+    </ul>
+  </section>
+
+  <section id="childrens-privacy">
+    <h2><span class="num">05</span>Children&rsquo;s Privacy</h2>
+    <p>
+      Platyko is designed to be safe for young learners, and our children&rsquo;s privacy model is
+      simple: <strong>children can use the app, but we never collect their data.</strong>
+    </p>
+    <ul>
+      <li>
+        The app is suitable for ages <strong>6 and up</strong> in Guest Mode. As described in
+        <a href="#guest-mode">Section 04</a>, Guest Mode stores progress only on the device and
+        sends no personal information to our servers.
+      </li>
+      <li>
+        Creating an account requires users to be <strong>at least 13 years old</strong>, in line
+        with the U.S. Children&rsquo;s Online Privacy Protection Act (COPPA) and the EU General Data
+        Protection Regulation (GDPR).
+      </li>
+      <li>
+        Because guest progress is only uploaded to our servers when an account is created &mdash;
+        and account creation requires being 13 or older &mdash; we do not knowingly collect or
+        store any personal data from children under 13.
+      </li>
+    </ul>
+    <p>
+      If you are a parent or guardian and believe a child under 13 has created an account, please
+      contact us at <a href="mailto:platyko.js@gmail.com">platyko.js@gmail.com</a> and we will
+      delete the account and its data promptly.
+    </p>
+  </section>
+
+  <section id="how-we-use-information">
+    <h2><span class="num">06</span>How We Use Information</h2>
+    <p>We use the information described above solely to operate the app:</p>
+    <ul>
+      <li>To create, authenticate, and secure your account</li>
+      <li>To save and sync your learning progress, streaks, duels, and puzzle results across sessions</li>
+      <li>To display your profile (including your avatar) to you and, where relevant, to duel opponents</li>
+      <li>To send push notifications you have enabled (for example, streak reminders or duel updates)</li>
+      <li>To send transactional emails: email verification codes and password-reset codes</li>
+      <li>To respond to your support and privacy requests</li>
+    </ul>
+    <p>We do not use your data for advertising, profiling, or automated decision-making, and we do not sell it.</p>
+  </section>
+
+  <section id="legal-bases">
+    <h2><span class="num">07</span>Legal Bases (GDPR)</h2>
+    <p>If you are in the European Economic Area or the United Kingdom, we process your personal data on the following legal bases:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Processing activity</th><th>Legal basis</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Creating and operating your account; saving learning progress; delivering the app&rsquo;s core features</td>
+            <td><strong>Performance of a contract</strong> (Art. 6(1)(b))</td>
+          </tr>
+          <tr>
+            <td>Sending push notifications</td>
+            <td><strong>Consent</strong> (Art. 6(1)(a)) &mdash; you opt in via iOS and can withdraw at any time</td>
+          </tr>
+          <tr>
+            <td>Securing accounts (hashed passwords, hashed one-time codes)</td>
+            <td><strong>Legitimate interests</strong> (Art. 6(1)(f)) &mdash; keeping the service secure</td>
+          </tr>
+          <tr>
+            <td>Responding to legal requests and privacy-rights requests</td>
+            <td><strong>Legal obligation</strong> (Art. 6(1)(c))</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="third-party-processors">
+    <h2><span class="num">08</span>Third-Party Service Providers</h2>
+    <p>
+      We use a small number of service providers (data processors) to run Platyko. They process
+      data only on our behalf and only for the purposes below &mdash; never for their own marketing.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Provider</th><th>Purpose</th><th>Data involved</th><th>Location</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Amazon Web Services (AWS)</strong></td>
+            <td>Application servers; email delivery (SES); avatar storage (S3)</td>
+            <td>All account and learning data; email address; avatar images</td>
+            <td>United States (us-east-1)</td>
+          </tr>
+          <tr>
+            <td><strong>Google</strong></td>
+            <td>Google Sign-In authentication</td>
+            <td>Email address and basic profile via identity token</td>
+            <td>Global</td>
+          </tr>
+          <tr>
+            <td><strong>Apple</strong></td>
+            <td>Sign in with Apple authentication</td>
+            <td>Email address (or private relay address) via identity token</td>
+            <td>Global</td>
+          </tr>
+          <tr>
+            <td><strong>Expo &amp; Apple Push Notification service</strong></td>
+            <td>Delivering push notifications</td>
+            <td>Device push tokens; notification content</td>
+            <td>United States / Global</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Google and Apple act under their own privacy policies when you authenticate with them:
+      <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>,
+      <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section id="international-transfers">
+    <h2><span class="num">09</span>International Data Transfers</h2>
+    <p>
+      Our servers are hosted on AWS in the United States (us-east-1 region). If you use Platyko
+      from outside the United States &mdash; including from the European Economic Area, the United
+      Kingdom, or Israel &mdash; your personal data is transferred to and stored in the United
+      States.
+    </p>
+    <p>
+      For transfers from the EEA and UK, we rely on AWS&rsquo;s Data Processing Addendum, which
+      incorporates the European Commission&rsquo;s Standard Contractual Clauses, as the safeguard
+      for these transfers. AWS also participates in the EU&ndash;U.S. Data Privacy Framework.
+    </p>
+  </section>
+
+  <section id="retention-and-deletion">
+    <h2><span class="num">10</span>Data Retention &amp; Deletion</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Retained</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Account, profile, and learning data</td>
+            <td>Until you delete your account</td>
+          </tr>
+          <tr>
+            <td>Email verification &amp; password-reset codes (hashed)</td>
+            <td>Automatically deleted after <strong>10 minutes</strong></td>
+          </tr>
+          <tr>
+            <td>Residual copies in server backups</td>
+            <td>Purged within <strong>30 days</strong> of account deletion</td>
+          </tr>
+          <tr>
+            <td>Guest Mode progress</td>
+            <td>Only on your device; removed when you delete the app</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Deleting your account</h3>
+    <p>
+      You can delete your account directly in the app: <strong>Settings &rarr; Delete Account</strong>.
+      Deletion is immediate and permanent &mdash; your account, profile, avatar, learning progress,
+      streaks, duel history, puzzle results, and push tokens are erased from our production systems
+      right away, and any residual copies in encrypted backups are purged within 30 days.
+    </p>
+    <p>
+      You can also request deletion by emailing
+      <a href="mailto:platyko.js@gmail.com">platyko.js@gmail.com</a> from the address associated
+      with your account.
+    </p>
+  </section>
+
+  <section id="security">
+    <h2><span class="num">11</span>Security</h2>
+    <p>We take reasonable technical and organizational measures to protect your data:</p>
+    <ul>
+      <li>Passwords are hashed with bcrypt; we never store plain-text passwords</li>
+      <li>One-time verification and reset codes are stored hashed and expire after 10 minutes</li>
+      <li>All communication between the app and our servers is encrypted in transit (HTTPS/TLS)</li>
+      <li>Server access is restricted and data is hosted on AWS infrastructure</li>
+    </ul>
+    <p>
+      No method of transmission or storage is 100% secure, but we design the app to hold the
+      minimum data necessary &mdash; the best protection for data we don&rsquo;t need is not to
+      collect it at all.
+    </p>
+  </section>
+
+  <section id="your-rights">
+    <h2><span class="num">12</span>Your Rights</h2>
+    <p>
+      Wherever you are, you can exercise the rights below by emailing
+      <a href="mailto:platyko.js@gmail.com">platyko.js@gmail.com</a>. We will verify your request
+      (normally by confirming control of the account email) and respond within 30 days.
+    </p>
+    <ul>
+      <li><strong>Access</strong> &mdash; receive a copy of the personal data we hold about you</li>
+      <li><strong>Correction</strong> &mdash; have inaccurate data corrected</li>
+      <li><strong>Deletion</strong> &mdash; have your data erased (also available directly in-app)</li>
+      <li><strong>Portability</strong> &mdash; receive your data in a structured, machine-readable format</li>
+      <li><strong>Objection &amp; restriction</strong> &mdash; object to or restrict certain processing</li>
+      <li><strong>Withdraw consent</strong> &mdash; for example, disable push notifications at any time</li>
+    </ul>
+
+    <h3>European Economic Area &amp; United Kingdom (GDPR / UK GDPR)</h3>
+    <p>
+      All of the rights above apply. You also have the right to lodge a complaint with your local
+      supervisory authority if you believe our processing violates the GDPR.
+    </p>
+
+    <h3>California (CCPA / CPRA)</h3>
+    <p>
+      California residents have the right to know, access, correct, and delete personal
+      information, and the right to non-discrimination for exercising these rights. Platyko does
+      not &ldquo;sell&rdquo; or &ldquo;share&rdquo; personal information as those terms are defined
+      in the CCPA/CPRA, and does not use or disclose sensitive personal information beyond what is
+      necessary to provide the service.
+    </p>
+
+    <h3>Israel (Privacy Protection Law, 5741-1981)</h3>
+    <p>
+      Under the Israeli Privacy Protection Law, you have the right to review data held about you in
+      our database and to request correction or deletion of inaccurate data. You may also submit a
+      complaint to the Israeli Privacy Protection Authority.
+    </p>
+  </section>
+
+  <section id="push-notifications">
+    <h2><span class="num">13</span>Push Notifications</h2>
+    <p>
+      Push notifications are strictly opt-in: the app only sends them if you grant permission
+      through iOS. We use them for things like streak reminders and duel updates &mdash; never for
+      advertising.
+    </p>
+    <p>
+      You can turn notifications off at any time in the app&rsquo;s settings or in
+      iOS <strong>Settings &rarr; Notifications &rarr; Platyko</strong>. When you delete your
+      account, your push tokens are deleted with it.
+    </p>
+  </section>
+
+  <section id="emails">
+    <h2><span class="num">14</span>Emails We Send</h2>
+    <p>
+      We send <strong>transactional emails only</strong>, delivered via AWS SES:
+    </p>
+    <ul>
+      <li>Email verification codes when you register</li>
+      <li>Password-reset codes when you request them</li>
+    </ul>
+    <p>
+      We do not send marketing, promotional, or newsletter emails, so there is nothing to
+      unsubscribe from.
+    </p>
+  </section>
+
+  <section id="this-website">
+    <h2><span class="num">15</span>This Website</h2>
+    <p>
+      platyko.com is a static website. It sets <strong>no cookies</strong>, runs
+      <strong>no analytics</strong>, and includes <strong>no trackers or third-party scripts</strong>.
+      Visiting this page sends us no personal information.
+    </p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">16</span>Changes to This Policy</h2>
+    <p>
+      We may update this policy as the app evolves or as legal requirements change. When we do, we
+      will update the &ldquo;Last updated&rdquo; date at the top of this page. For material changes
+      &mdash; anything that meaningfully affects what data we collect or how we use it &mdash; we
+      will also notify registered users in the app or by email before the change takes effect.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">17</span>Contact</h2>
+    <p>
+      Questions, concerns, or requests about your privacy? Contact:
+    </p>
+    <ul>
+      <li><strong>Ido Yahav</strong> &mdash; developer and data controller</li>
+      <li>Email: <a href="mailto:platyko.js@gmail.com">platyko.js@gmail.com</a></li>
+      <li>Israel</li>
+    </ul>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Ido Yahav &middot; Platyko</p>
+    <p class="mono">Last updated: 2026-08-17</p>
+  </footer>
+
+</div>
+</body>
+</html>
