@@ -1,0 +1,704 @@
+<!-- /terms/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Terms of Use for Platyko, the JavaScript learning app for iOS. Plain-English rules for accounts, fair play in duels, user content, and your license to use the app.">
+  <meta name="color-scheme" content="light dark">
+  <title>Terms of Use — Platyko</title>
+<style>
+  :root {
+    --bg: #FBFAF6;
+    --surface: #F3F1E7;
+    --surface-2: #EDEADD;
+    --ink: #22211C;
+    --muted: #6B675C;
+    --rule: #E3E0D2;
+    --accent: #8A6A00;
+    --accent-strong: #6E5500;
+    --accent-wash: #F6EFD3;
+    --code-bg: #EFECDF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #191813;
+      --surface: #211F18;
+      --surface-2: #282519;
+      --ink: #EBE8DC;
+      --muted: #A39E8E;
+      --rule: #343124;
+      --accent: #F2D24B;
+      --accent-strong: #F8DE74;
+      --accent-wash: #2A2717;
+      --code-bg: #262316;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #191813;
+    --surface: #211F18;
+    --surface-2: #282519;
+    --ink: #EBE8DC;
+    --muted: #A39E8E;
+    --rule: #343124;
+    --accent: #F2D24B;
+    --accent-strong: #F8DE74;
+    --accent-wash: #2A2717;
+    --code-bg: #262316;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  .page {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+  }
+
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: var(--accent-strong); }
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 2.5rem;
+  }
+  .masthead {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem 1.5rem;
+    margin: 0 0 1.75rem;
+  }
+  .wordmark {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .site-nav {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.875rem;
+  }
+  .site-nav a { color: var(--muted); text-decoration: none; }
+  .site-nav a:hover { color: var(--accent); text-decoration: underline; }
+  .site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+  .wordmark .brace { color: var(--accent); font-weight: 700; }
+  .site-header h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    text-wrap: balance;
+  }
+  .doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.8125rem;
+    color: var(--muted);
+    margin: 0 0 1rem;
+  }
+  .doc-meta strong { color: var(--ink); font-weight: 600; }
+  .lede {
+    color: var(--muted);
+    font-size: 1.0625rem;
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  /* ---------- At a glance ---------- */
+  .glance {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin: 0 0 2.5rem;
+  }
+  @media (max-width: 540px) {
+    .glance { grid-template-columns: 1fr; }
+  }
+  .glance-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+  }
+  .glance-card h3 {
+    margin: 0 0 0.3rem;
+    font-size: 0.9375rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+  .glance-card p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ---------- Table of contents ---------- */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.5rem 1.5rem 1.25rem;
+    margin: 0 0 3rem;
+  }
+  .toc h2 {
+    margin: 0 0 1rem;
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  @media (max-width: 540px) {
+    .toc ol { columns: 1; }
+  }
+  .toc li {
+    break-inside: avoid;
+    padding: 0.28rem 0;
+    font-size: 0.9375rem;
+  }
+  .toc .num {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    margin-right: 0.55rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .toc a { color: var(--ink); text-decoration: none; }
+  .toc a:hover { color: var(--accent); text-decoration: underline; }
+
+  /* ---------- Sections ---------- */
+  section { margin: 0 0 3rem; scroll-margin-top: 1.5rem; }
+  section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    margin: 0 0 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    text-wrap: balance;
+  }
+  section h2 .num {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+  section h3 {
+    font-size: 1.0625rem;
+    font-weight: 650;
+    margin: 1.75rem 0 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  section p, section ul, section ol { margin: 0 0 1rem; max-width: 68ch; }
+  section ul, section ol { padding-left: 1.4rem; }
+  section li { margin-bottom: 0.45rem; }
+  section li::marker { color: var(--accent); }
+
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 0.9rem 1.1rem;
+    margin: 0 0 1rem;
+    font-size: 0.9375rem;
+  }
+  .callout p { margin: 0; }
+  .callout p + p { margin-top: 0.6rem; }
+
+  code {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.85em;
+    background: var(--code-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+  }
+
+  /* ---------- Tables ---------- */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 560px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  tr:last-child td { border-bottom: none; }
+  th {
+    background: var(--surface);
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.71rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  td strong { font-weight: 650; }
+
+  /* ---------- Footer ---------- */
+  .site-footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    justify-content: space-between;
+  }
+  .site-footer p { margin: 0; }
+  .site-footer a { color: var(--muted); }
+  .site-footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="site-header">
+    <div class="masthead">
+      <p class="wordmark"><span class="brace">{</span> platyko <span class="brace">}</span></p>
+      <nav class="site-nav" aria-label="Legal pages">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/" aria-current="page">Terms of Use</a>
+      </nav>
+    </div>
+    <h1>Terms of Use</h1>
+    <p class="doc-meta">
+      <span>Effective date: <strong>August 17, 2026</strong></span>
+      <span>Last updated: <strong>August 17, 2026</strong></span>
+    </p>
+    <p class="lede">
+      Platyko is a JavaScript learning app for iOS, built and operated by Ido Yahav, an
+      individual developer based in Israel. These terms are the agreement between you and us
+      when you use the app. They are written in plain English on purpose &mdash; the short
+      version is below, and the full version follows.
+    </p>
+  </header>
+
+  <div class="glance" aria-label="Terms at a glance">
+    <div class="glance-card">
+      <h3>Free to use</h3>
+      <p>Platyko is currently free, with no purchases or subscriptions. Anyone can learn in Guest Mode from age 6; creating an account requires being 13 or older.</p>
+    </div>
+    <div class="glance-card">
+      <h3>Play fair</h3>
+      <p>No cheating in duels, no exploiting bugs, no bots or scraping. The app works because everyone competes on the same terms.</p>
+    </div>
+    <div class="glance-card">
+      <h3>Your account, your responsibility</h3>
+      <p>One account per person, with a real email address. Keep your credentials safe &mdash; and you can delete your account any time in Settings.</p>
+    </div>
+    <div class="glance-card">
+      <h3>Our content, your license</h3>
+      <p>Lessons, puzzles, the mascot, and branding belong to us. You get a personal, non-commercial license to use them inside the app.</p>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><span class="num">01</span><a href="#acceptance">Acceptance of These Terms</a></li>
+      <li><span class="num">02</span><a href="#eligibility">Eligibility &amp; Age Requirements</a></li>
+      <li><span class="num">03</span><a href="#accounts">Your Account</a></li>
+      <li><span class="num">04</span><a href="#acceptable-use">Acceptable Use</a></li>
+      <li><span class="num">05</span><a href="#user-content">User Content</a></li>
+      <li><span class="num">06</span><a href="#intellectual-property">Intellectual Property</a></li>
+      <li><span class="num">07</span><a href="#termination">Termination</a></li>
+      <li><span class="num">08</span><a href="#disclaimers">Disclaimers</a></li>
+      <li><span class="num">09</span><a href="#liability">Limitation of Liability</a></li>
+      <li><span class="num">10</span><a href="#apple">Apple App Store Terms</a></li>
+      <li><span class="num">11</span><a href="#changes">Changes to These Terms</a></li>
+      <li><span class="num">12</span><a href="#governing-law">Governing Law &amp; Jurisdiction</a></li>
+      <li><span class="num">13</span><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="acceptance">
+    <h2><span class="num">01</span>Acceptance of These Terms</h2>
+    <p>
+      These Terms of Use (&ldquo;Terms&rdquo;) are a legal agreement between you and
+      <strong>Ido Yahav</strong>, an individual developer based in Israel (&ldquo;we&rdquo;,
+      &ldquo;us&rdquo;, or &ldquo;the operator&rdquo;), covering your use of the Platyko iOS app
+      (&ldquo;the app&rdquo;) and this website.
+    </p>
+    <p>
+      By downloading, installing, or using the app, you agree to these Terms. If you do not agree,
+      please do not use the app. If you are under 18, a parent or guardian should review these
+      Terms with you.
+    </p>
+    <p>
+      How we handle your personal data is described separately in our
+      <a href="/privacy/">Privacy Policy</a>, which is part of the same agreement.
+    </p>
+  </section>
+
+  <section id="eligibility">
+    <h2><span class="num">02</span>Eligibility &amp; Age Requirements</h2>
+    <p>Platyko has two ways to use it, with different age requirements:</p>
+    <ul>
+      <li>
+        <strong>Guest Mode</strong> &mdash; available from age <strong>6 and up</strong>. Guest
+        Mode requires no account, and your progress stays only on your device.
+      </li>
+      <li>
+        <strong>Registered accounts</strong> &mdash; you must be at least <strong>13 years
+        old</strong> to create an account. This matches the age rules in our
+        <a href="/privacy/">Privacy Policy</a> and applicable children&rsquo;s privacy laws.
+      </li>
+    </ul>
+    <p>
+      By creating an account, you confirm that you are 13 or older and that any information you
+      provide during registration is accurate. If we learn that an account holder is under 13, we
+      will delete the account and its data as described in the Privacy Policy.
+    </p>
+  </section>
+
+  <section id="accounts">
+    <h2><span class="num">03</span>Your Account</h2>
+    <p>If you choose to create an account, a few simple rules apply:</p>
+    <ul>
+      <li>
+        <strong>One account per person.</strong> Do not create multiple accounts or share an
+        account with others &mdash; duels, streaks, and progress are meant to belong to one
+        learner.
+      </li>
+      <li>
+        <strong>Use an accurate email address</strong> that you control. We use it to verify your
+        account and to help you recover access. Signing in with Google or Apple (including
+        Apple&rsquo;s private relay email) is fine.
+      </li>
+      <li>
+        <strong>Keep your credentials secure.</strong> You are responsible for activity that
+        happens under your account. If you believe someone else has accessed it, change your
+        password or contact us at
+        <a href="mailto:platyko.js@gmail.com">platyko.js@gmail.com</a>.
+      </li>
+    </ul>
+    <p>
+      You can delete your account at any time in the app under
+      <strong>Settings &rarr; Delete Account</strong> &mdash; see
+      <a href="#termination">Section 07</a>.
+    </p>
+  </section>
+
+  <section id="acceptable-use">
+    <h2><span class="num">04</span>Acceptable Use</h2>
+    <p>
+      Platyko is a learning community built on fair competition. When using the app, you agree
+      <strong>not</strong> to:
+    </p>
+    <ul>
+      <li>
+        <strong>Cheat in duels</strong> or otherwise manipulate scores, streaks, rankings, or
+        results &mdash; including using another person&rsquo;s answers, automated solvers, or any
+        unfair advantage
+      </li>
+      <li>
+        <strong>Exploit bugs</strong> or vulnerabilities in the app or our servers. If you find
+        one, please report it to <a href="mailto:platyko.js@gmail.com">platyko.js@gmail.com</a>
+        instead
+      </li>
+      <li>
+        <strong>Access the service by automated means</strong> &mdash; no bots, scripts, scrapers,
+        or bulk downloading of lessons, puzzles, or other content
+      </li>
+      <li>
+        <strong>Reverse engineer</strong>, decompile, or disassemble the app, or attempt to extract
+        its source code, except where such a restriction is prohibited by applicable law
+      </li>
+      <li>
+        <strong>Harass or abuse others</strong> &mdash; no offensive, threatening, or otherwise
+        abusive behavior toward other users, including through avatars or duel interactions
+      </li>
+      <li>
+        Interfere with or disrupt the service, or use it for any unlawful purpose
+      </li>
+    </ul>
+    <p class="callout">
+      Breaking these rules can lead to suspension or termination of your account
+      (<a href="#termination">Section 07</a>). We would much rather you just enjoy learning
+      JavaScript.
+    </p>
+  </section>
+
+  <section id="user-content">
+    <h2><span class="num">05</span>User Content</h2>
+    <p>
+      The main content you can add to Platyko is a <strong>profile avatar</strong>. If you upload
+      one:
+    </p>
+    <ul>
+      <li>
+        It must be appropriate for a learning app used by teenagers &mdash; no nudity, violence,
+        hate symbols, or otherwise offensive imagery
+      </li>
+      <li>
+        You must have the right to use the image you upload
+      </li>
+      <li>
+        You grant us the limited technical permission needed to store your avatar and display it
+        in the app (to you and, for example, to duel opponents). We claim no other rights over it
+      </li>
+    </ul>
+    <p>
+      We may remove any avatar that violates these rules, at our discretion and without prior
+      notice. Repeated violations may lead to account suspension or termination.
+    </p>
+  </section>
+
+  <section id="intellectual-property">
+    <h2><span class="num">06</span>Intellectual Property</h2>
+    <p>
+      Everything that makes up Platyko &mdash; the lessons, courses, puzzles, duel questions, the
+      mascot, the Platyko name and logo, and the app&rsquo;s design and code &mdash; belongs to the
+      operator and is protected by copyright and other intellectual property laws.
+    </p>
+    <p>
+      We grant you a <strong>limited, personal, non-exclusive, non-transferable, revocable
+      license</strong> to use the app and its content for your own personal, non-commercial
+      learning. This license does not allow you to:
+    </p>
+    <ul>
+      <li>Copy, redistribute, sell, or republish lessons, puzzles, or other app content</li>
+      <li>Use the Platyko name, mascot, or branding in your own products or materials</li>
+      <li>Create derivative works from the app or its content</li>
+    </ul>
+    <p>
+      The JavaScript language itself, and the code <em>you</em> write while learning, are of
+      course not ours &mdash; what you learn and build is yours.
+    </p>
+  </section>
+
+  <section id="termination">
+    <h2><span class="num">07</span>Termination</h2>
+    <h3>By us</h3>
+    <p>
+      We may suspend or terminate your account if you violate these Terms &mdash; for example, by
+      cheating in duels, exploiting bugs, uploading inappropriate avatars, or abusing other users.
+      Where reasonable, we will warn you first, but for serious or repeated violations we may act
+      immediately.
+    </p>
+    <h3>By you</h3>
+    <p>
+      You can stop using Platyko at any time, and you can delete your account directly in the app
+      under <strong>Settings &rarr; Delete Account</strong>. Deletion is immediate and permanent.
+      What happens to your data when you delete your account is described in the
+      <a href="/privacy/#retention-and-deletion">Privacy Policy</a>.
+    </p>
+    <p>
+      Sections of these Terms that by their nature should survive termination &mdash; including
+      intellectual property, disclaimers, limitation of liability, and governing law &mdash;
+      survive it.
+    </p>
+  </section>
+
+  <section id="disclaimers">
+    <h2><span class="num">08</span>Disclaimers</h2>
+    <p>
+      The app is provided <strong>&ldquo;as is&rdquo; and &ldquo;as available&rdquo;</strong>,
+      without warranties of any kind, express or implied &mdash; including implied warranties of
+      merchantability, fitness for a particular purpose, and non-infringement &mdash; to the
+      fullest extent permitted by applicable law.
+    </p>
+    <ul>
+      <li>
+        <strong>Educational content is not professional advice.</strong> Platyko teaches
+        programming for learning purposes. We work to keep lessons accurate and up to date, but we
+        do not guarantee that content is error-free, and it is not a substitute for professional
+        training, certification, or advice.
+      </li>
+      <li>
+        <strong>No guarantee of uninterrupted service.</strong> Platyko is run by a single
+        developer. We do not promise that the app or its servers will always be available,
+        uninterrupted, or free of defects, or that any particular feature will remain available.
+      </li>
+    </ul>
+    <p>
+      Some jurisdictions do not allow the exclusion of certain warranties, so parts of this
+      section may not apply to you.
+    </p>
+  </section>
+
+  <section id="liability">
+    <h2><span class="num">09</span>Limitation of Liability</h2>
+    <p>
+      To the fullest extent permitted by applicable law, the operator will not be liable for any
+      indirect, incidental, special, consequential, or punitive damages &mdash; including loss of
+      data, loss of progress (such as streaks or duel history), or loss of profits &mdash; arising
+      out of or related to your use of, or inability to use, the app.
+    </p>
+    <p>
+      To the same extent, the operator&rsquo;s total aggregate liability for all claims relating
+      to the app will not exceed the amount you paid us to use the app in the twelve months before
+      the claim arose &mdash; which, for a free app with no purchases, is <strong>zero</strong>,
+      or, where a minimum cannot be excluded, the smallest amount permitted by law.
+    </p>
+    <p>
+      Nothing in these Terms excludes or limits liability that cannot be excluded or limited under
+      applicable law, including where relevant liability for death, personal injury, or willful
+      misconduct.
+    </p>
+  </section>
+
+  <section id="apple">
+    <h2><span class="num">10</span>Apple App Store Terms</h2>
+    <p>
+      Platyko is distributed through Apple&rsquo;s App Store. The following terms apply between
+      you, us, and Apple Inc. (&ldquo;Apple&rdquo;):
+    </p>
+    <ul>
+      <li>
+        These Terms are between <strong>you and the operator only</strong> &mdash; not with Apple.
+        Apple is not responsible for the app or its content.
+      </li>
+      <li>
+        Your license to the app is limited to use on Apple-branded devices that you own or
+        control, as permitted by the App Store Terms of Service (including any Family Sharing
+        rules).
+      </li>
+      <li>
+        <strong>Apple has no obligation to provide maintenance or support</strong> for the app.
+        For support, contact us at <a href="mailto:platyko.js@gmail.com">platyko.js@gmail.com</a>.
+      </li>
+      <li>
+        <strong>Apple has no warranty obligations</strong> for the app, except that if the app
+        fails to conform to an applicable warranty, you may notify Apple and Apple will refund the
+        purchase price (if any) to you. Any other warranty claims are our responsibility, to the
+        extent not disclaimed above.
+      </li>
+      <li>
+        Apple is not responsible for addressing any claims by you or a third party relating to the
+        app, including product liability claims, claims that the app fails to conform to legal or
+        regulatory requirements, or consumer protection claims.
+      </li>
+      <li>
+        If a third party claims the app infringes their intellectual property rights, we &mdash;
+        not Apple &mdash; are responsible for the investigation, defense, settlement, and
+        discharge of that claim.
+      </li>
+      <li>
+        You represent that you are not located in a country subject to a U.S. Government embargo
+        or designated as a &ldquo;terrorist supporting&rdquo; country, and that you are not on any
+        U.S. Government list of prohibited or restricted parties.
+      </li>
+      <li>
+        Apple and its subsidiaries are <strong>third-party beneficiaries</strong> of these Terms
+        and may enforce them against you.
+      </li>
+    </ul>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">11</span>Changes to These Terms</h2>
+    <p>
+      We may update these Terms as the app evolves or as legal requirements change. When we do, we
+      will update the &ldquo;Last updated&rdquo; date at the top of this page. For material
+      changes &mdash; anything that meaningfully affects your rights or obligations &mdash; we
+      will also notify registered users in the app or by email before the change takes effect.
+    </p>
+    <p>
+      If you continue using the app after updated Terms take effect, that means you accept them.
+      If you do not agree with a change, stop using the app and, if you have an account, delete it
+      in Settings.
+    </p>
+  </section>
+
+  <section id="governing-law">
+    <h2><span class="num">12</span>Governing Law &amp; Jurisdiction</h2>
+    <p>
+      These Terms are governed by the laws of the <strong>State of Israel</strong>, without regard
+      to its conflict-of-law rules. Any dispute arising out of or relating to these Terms or the
+      app will be subject to the exclusive jurisdiction of the competent courts in Israel.
+    </p>
+    <p>
+      If you are a consumer in a jurisdiction whose laws give you mandatory protections or the
+      right to bring proceedings in your local courts, nothing in this section takes those rights
+      away.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">13</span>Contact</h2>
+    <p>
+      Questions about these Terms? Contact:
+    </p>
+    <ul>
+      <li><strong>Ido Yahav</strong> &mdash; developer and operator</li>
+      <li>Email: <a href="mailto:platyko.js@gmail.com">platyko.js@gmail.com</a></li>
+      <li>Israel</li>
+    </ul>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Ido Yahav &middot; Platyko</p>
+    <p><a href="/privacy/">Privacy Policy</a></p>
+    <p class="mono">Last updated: 2026-08-17</p>
+  </footer>
+
+</div>
+</body>
+</html>
